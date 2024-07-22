@@ -1277,6 +1277,8 @@ export class MessageProcessor {
               ].join('\n'),
             );
           }
+          await this._graphQLCache.getObjectTypeDefinitions(project);
+          await this._graphQLCache.getFragmentDefinitions(project);
         }),
       );
     }
